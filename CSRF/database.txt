@@ -1,0 +1,35 @@
+Name: Anna
+Chemistry: 100
+Physics: 100
+Maths: 100
+***
+Name: Batman
+Chemistry: 100
+Physics: 100
+Maths: 100
+***
+Name: Anna
+Chemistry: 100
+Physics: 100
+Maths: 100
+***
+Name: Adam
+Chemistry: 90
+Physics: 90
+Maths: 90
+***
+Name: Jan
+Chemistry: 100
+Physics: 100
+Maths: 100
+***
+Name: Batman
+Chemistry: 100
+Physics: 100
+Maths: 100
+***
+Name: Jan
+Chemistry: 100
+Physics: 100
+Maths: 100
+***
