@@ -7,7 +7,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def main():
-    # import ipdb; ipdb.set_trace()
     return render_template(
                 'index.html',
                 user_address=request.remote_addr,
