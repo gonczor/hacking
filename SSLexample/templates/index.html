@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <title>Hello from secure flask</title>
+</head>
+
+<body>
+    <h1>Hello there.</h1>
+    <p> You are from {{ user_address }} using {{ browser }}. interesting...</p>
+    <p> Don't worry. It's HTTPS. Nobody will know your dirty little secret.</p>
+</body>
+
+</html>
