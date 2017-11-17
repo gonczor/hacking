@@ -11,10 +11,10 @@ entry_found = False
 
 def create_threads(passwords):
     password_list_split_points = [
-        (0, len(passwords) // 4),
-        (len(passwords) // 4 + 1, len(passwords) // 2),
-        (len(passwords) // 2 + 1, 3 * (len(passwords) // 4)),
-        (3 * (len(passwords) // 4) + 1, len(passwords) - 1),
+        (0, len(passwords) // 4 + 1),
+        (len(passwords) // 4 + 1, len(passwords) // 2 + 1),
+        (len(passwords) // 2 + 1, 3 * (len(passwords) // 4 + 1)),
+        (3 * (len(passwords) // 4) + 1, len(passwords)),
     ]
     thread_list = [threading.Thread(
         target=run_cracker,
