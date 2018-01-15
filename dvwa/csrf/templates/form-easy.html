@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block attack %}
+    {% include 'attacks/easy.html' %}
+{% endblock %}
+{% block attack_list %}
+    <ul>
+        <li class="selected"><a href="{{ url_for('easy') }}">easy</a></li>
+        <li><a href="{{ url_for('medium') }}">medium</a></li>
+        <li><a href="{{ url_for('hard') }}">hard</a></li>
+    </ul>
+{% endblock %}

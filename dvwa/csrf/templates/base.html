@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="static/main.css">
+        <script src="static/main.js"></script>
+    </head>
+    <body onload="document.form1.submit()">
+        <main>
+            {% block attack %}
+            {% endblock %}
+            <div>
+                To show code using below button you need to have to have JavaScript enabled.
+                <br>
+                <button type="button" onclick="toggleDisplay()">Show code.</button>
+                <br>
+                <div id="source" style="display: none;">
+                    {% block source %}
+<pre><code>
+{{ contents }}
+</code></pre>
+                    {% endblock %}
+                </div>
+            </div>
+        </main>
+        <aside>
+            {% block attack_list %}
+            {% endblock %}
+        </aside>
+    </body>
+</html>

